@@ -57,7 +57,9 @@ struct ChatThreadView: View {
                         .padding(.leading)
             }
             Button(action: {
-                
+                Task {
+                    await viewModel.fetchSolutions()
+                }
             }, label: {
                 Text("Send")
                     .font(.system(size: 15, weight: .semibold))
